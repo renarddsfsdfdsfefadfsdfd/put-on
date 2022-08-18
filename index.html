@@ -1,0 +1,212 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>创协团队网站发布发布</title>
+    <style>
+       p{
+        font-family: '行楷';
+        font-size:20px;
+    }
+    body{background-image: url(https://img0.baidu.com/it/u=1015869566,4005398725&fm=253&fmt=auto&app=138&f=JPEG?w=800&h=500);background-size: contain;} 
+    </style>
+</head>
+<body>
+    <h2><font color='black'>创协团队网站发布</font></h2>
+<h1><button onclick="myFunction()"><font color='black'>查询</font></button></body></h1>
+<p id="demo"></p>
+<hr/>
+<h3><font color=#b56gy77>发布人：Renard Zhan（张耀霖）</font></h3>
+
+<script>
+function myFunction(){
+	var x="";
+	var time=new Date().getHours();
+      
+     if (isNaN(time)||time>13){
+        x="产品尚未发布";
+     }
+     if (isNaN(time)||time>20){
+        x="https://renarddsfsdfdsfefadfsdfd.github.io/website/";
+     }
+//iaNaN会导致取数为整号所以所有时间要往后退一小时   
+     
+	document.getElementById("demo").innerHTML=x;
+}
+</script>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clock</title>
+    <style type="text/css">
+      *
+      {
+        /*外边距为0*/
+        margin: 0;
+        /*内边距为0*/
+        pading: 0;
+        /*规定一个带边框的框*/
+        box-sizing: border-box;
+      }
+      /*将时钟固定在页面中间的弹性盒子，时钟大小多大，盒子就有多大*/
+      body
+      {
+        /*固定时钟的长方形盒子为弹性布局*/
+        display: flex;
+        /*居中*/
+        justify-content: center;
+        /*交叉轴的中点对齐*/
+        align-items: center;
+        /*该块元素，高度如果小于100vh，那么这个块元素就不会再自动变小，而是保持100vh不变*/
+        /*vh指相对长度单位，view height*/
+        min-height: 100vh;
+        background: #07a5f4;
+      }
+      /*放置时钟的正方形盒子*/
+      .clock
+      {
+        /*时钟宽度*/
+        width: 400px;
+        /*时钟高度*/
+        height: 400px;
+        /*时钟盒子为弹性布局*/
+        display: flex;
+        /*盒子中的内容居中*/
+        justify-content: center;
+        /*交叉轴的中点对齐*/
+        align-items: center;
+        background: url("clock.png");
+        /*把背景图片放大到适合元素容器的尺寸，图片比例不变，超出容器的部分可能会被裁掉*/
+        background-size: cover;
+        /*盒子的框实线*/
+        border: 4px solid #091921;
+        /*把盒子框实线锐化为圆角*/
+        border-radius: 50%;
+        box-shadow: 0 -15px 15px rgba(255,255,255,0.05),
+        inset 0 -15px 15px rgba(255,255,255,0.05),
+        0 15px 15px rgba(0,0,0,0.3),
+        inset 0 -15px 15px rgba(255,255,255,0.3);
+
+      }
+      /*时钟中心*/
+      /*在clock元素前插入中心*/
+      .clock:before
+      {
+        content: '';
+        /*与clock的位置有关*/
+        /*绝对定位的盒子，在没有规定left和top时，是相对于父元素的content左上角定位的，不包含padding*/
+        /*绝对定位与padding和父级相对定位的box-sizing有关*/
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background: #ffffff;
+        border-radius: 50%;
+        z-index: 10000;
+      }
+      .clock .hour,
+      .clock .min,
+      .clock .sec
+      {
+        position: absolute;
+      }
+      /*设置时针分针秒针的位置*/
+      .clock .hour ,hr
+      {
+        width: 0;
+        height: 0;
+      }
+      .clock .min ,mn
+      {
+        width: 0;
+        height: 0;
+      }
+      .clock .sec ,sec
+      {
+        width: 0;
+        height: 0;
+      }
+      .hr, .mn, .sc
+      {
+        display: flex;
+        /*justify-content: flex-end;*/
+        justify-content: center;
+        /*align-items: center;*/
+        position: absolute;
+        border-radius: 50%;
+      }
+      .hr:before
+      {
+        content: '';
+        position: absolute;
+        width: 8px;
+        height: 80px;
+        background: #4169E1;
+        z-index: 10;
+        border-radius: 6px 6px 0 0;
+      }
+      .mn:before
+      {
+        content: '';
+        position: absolute;
+        width: 4px;
+        height: 90px;
+        background: #fff;
+        z-index: 11;
+        border-radius: 6px 6px 0 0;
+      }
+      .sc:before
+      {
+        content: '';
+        position: absolute;
+        width: 2px;
+        height: 150px;
+        background: #fff;
+        z-index: 12;
+        border-radius: 6px 6px 0 0;
+      }
+    </style>
+
+<!--    <link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+  <div class="clock">
+    <div class="hour">
+      <div class="hr" id="hr"></div>
+    </div>
+    <div class="min">
+      <div class="mn" id="mn"></div>
+    </div>
+    <div class="sec">
+      <div class="sc" id="sc"></div>
+    </div>
+  </div>
+
+  <script type="text/javascript">
+    const deg = 6;
+    const nor = 180;
+    const hr = document.querySelector('#hr');
+    const mn = document.querySelector('#mn');
+    const sc = document.querySelector('#sc');
+
+    setInterval(() => {
+      let day = new Date();
+      let hh = day.getHours() * 30;
+      let mm = day.getMinutes() * deg;
+      let ss = day.getSeconds() * deg;
+
+      hr.style.transform = `rotateZ(${(hh)+(mm/12)+177}deg)`;
+      mn.style.transform = `rotateZ(${mm+nor}deg)`;
+      sc.style.transform = `rotateZ(${ss+nor}deg)`;
+      // hr.style.transform = rotateZ(+ hh + deg);
+      // mn.style.transform = rotateZ(+ mm + deg);
+      // sc.style.transform = rotateZ(+ ss + deg);
+    })
+
+  </script>
+</body>
+</html>
+
