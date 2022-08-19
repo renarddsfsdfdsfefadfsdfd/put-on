@@ -24,12 +24,7 @@ function myFunction(){
 	var x="";
 	var time=new Date().getHours();
       
-     if (isNaN(time)||time>13){
-        x="产品尚未发布";
-     }
-     if (isNaN(time)||time>18){
-        x="https://renarddsfsdfdsfefadfsdfd.github.io/website/";
-     }
+     x='您已经错过发布时间'
 //iaNaN会导致取数为整号所以所有时间要往后退一小时   
      
 	document.getElementById("demo").innerHTML=x;
@@ -209,4 +204,3 @@ function myFunction(){
   </script>
 </body>
 </html>
-
